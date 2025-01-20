@@ -1,33 +1,5 @@
-// import type { FC } from "react";
-// const Navbar: FC = () => {
-//   return (
-//     <div className="flex justify-between items-center m-auto h-[38px] w-[90%]">
-//       <div className="flex gap-2 text-[20px]">
-//         <img src={"/icons/logo.svg"} alt="logo" />
-//       </div>
-//       <div>Home</div>
-//       <div>Contact</div>
-//       <div>About</div>
-//       <div>Sign Up</div>
-//       <div>
-//         <h3 className="bg-[#f5f5f5]">What are you looking for?</h3>
-//       </div>
-//       <div>
-//         <img src={"/icons/search.svg"} alt="search" />
-//       </div>
-//       <div>
-//         <img src={"/icons/search.svg"} alt="search" />
-//       </div>
-//       <div>
-//         <img src={"/icons/search.svg"} alt="search" />
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Navbar;
-
 import type { FC } from "react";
+import { Input } from "../ui/input";
 
 const Navbar: FC = () => {
   return (
@@ -45,7 +17,7 @@ const Navbar: FC = () => {
 
       <div className="flex items-center gap-6">
         <div className="relative mt-4">
-          <input
+          <Input
             type="text"
             placeholder="What are you looking for?"
             className="w-[250px] h-[30px] pl-4 pr-5 border border-gray-300 rounded-sm text-sm bg-[#f5f5f5] focus:outline-none"
