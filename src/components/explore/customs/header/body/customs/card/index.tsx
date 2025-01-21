@@ -1,3 +1,5 @@
+import { Button } from "@/components/ui/button";
+
 const Card = () => {
   return (
     <div className="w-[270px] h-[350px] mt-4">

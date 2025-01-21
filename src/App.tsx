@@ -5,6 +5,7 @@ import ShopSection from "./components/shops-section";
 import Categories from "./components/categories";
 import Products from "./components/products";
 import Explore from "./components/explore";
+import Footer from "./components/footer";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Categories />
       <Products />
       <Explore />
+      <Footer />
     </div>
   );
 }

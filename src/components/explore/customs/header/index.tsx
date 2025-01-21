@@ -1,16 +1,26 @@
-import { Button } from "@/components/ui/button";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious
+} from "@/components/ui/carousel";
 
 const Header = () => {
   return (
-    <div>
-      <div className="flex justify-between items-center">
-        <h1 className="text-[28px] font-bold text-black">
-          Best Selling Products
-        </h1>
-        <Button variant={"destructive"} className="w-36 mr-10">
-          View All
-        </Button>
-      </div>
+    <div className="flex justify-between items-center">
+      <h1 className="text-[28px] font-bold text-black">Explore Our Products</h1>
+
+      <Carousel className="flex space-x-16 mr-24">
+        <CarouselContent>
+          <CarouselItem></CarouselItem>
+          <CarouselItem></CarouselItem>
+          <CarouselItem></CarouselItem>
+          <CarouselItem></CarouselItem>
+        </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
     </div>
   );
 };
