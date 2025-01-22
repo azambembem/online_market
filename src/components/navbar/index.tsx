@@ -2,6 +2,8 @@ import type { FC } from "react";
 import { Input } from "../ui/input";
 import { Heart, Search, ShoppingCart } from "lucide-react";
 import { toast } from "sonner";
+import AuthDialog from "./auth-dialog";
+import { Dialog, DialogTrigger } from "../ui/dialog";
 
 const Navbar: FC = () => {
   return (
@@ -14,7 +16,12 @@ const Navbar: FC = () => {
         <div className="hover:underline">Home</div>
         <div className="hover:underline">Contact</div>
         <div className="hover:underline">About</div>
-        <div className="hover:underline">Sign Up</div>
+        <Dialog>
+          <DialogTrigger asChild>
+            <div className="hover:underline">Sign Up</div>
+          </DialogTrigger>
+          <AuthDialog />
+        </Dialog>
       </div>
 
       <div className="flex items-center gap-6">

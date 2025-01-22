@@ -1,4 +1,5 @@
-import HomeComponent from "../../components/home";
+// import HomeComponent from "../../components/home"; // birxil ushni qiliyapti
+import HomeComponent from "@/components/home";
 const Home = () => {
   return (
     <div>
