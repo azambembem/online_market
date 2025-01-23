@@ -20,6 +20,5 @@ export type IRoute = {
 	element: JSX.Element;
 	id: number;
 	isPrivate?: boolean;
-	hasChild?: boolean;
-	children?: IRoute[];
+	
 };

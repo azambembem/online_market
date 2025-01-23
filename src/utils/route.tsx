@@ -1,5 +1,7 @@
 import Home from "@/pages/home";
-import { IRoute } from "@/types";
+import Login from "@/pages/login";
+import SignUp from "@/pages/sing-up";
+import type { IRoute } from "@/types";
 
 export const route: IRoute[] = [
   {
@@ -7,5 +9,17 @@ export const route: IRoute[] = [
     path: "/",
     element: <Home />,
     id: 1
+  },
+  {
+    title: "SignUp",
+    path: "/sign-up",
+    element: <SignUp />,
+    id: 2
+  },
+  {
+    title: "Login",
+    path: "/login",
+    element: <Login />,
+    id: 2
   }
 ];

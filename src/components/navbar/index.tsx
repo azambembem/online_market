@@ -2,10 +2,11 @@ import type { FC } from "react";
 import { Input } from "../ui/input";
 import { Heart, Search, ShoppingCart } from "lucide-react";
 import { toast } from "sonner";
-import AuthDialog from "./auth-dialog";
-import { Dialog, DialogTrigger } from "../ui/dialog";
+// import AuthDialog from "./auth-dialog";
+import { useNavigate } from "react-router-dom";
 
 const Navbar: FC = () => {
+  const navigate = useNavigate();
   return (
     <div className="flex justify-between items-center w-[90%] h-[50px] mx-auto mt-4 ">
       <div className="text-[20px] font-bold text-black flex items-center ml-4">
@@ -16,13 +17,15 @@ const Navbar: FC = () => {
         <div className="hover:underline">Home</div>
         <div className="hover:underline">Contact</div>
         <div className="hover:underline">About</div>
-        <Dialog>
-          <DialogTrigger asChild>
-            <div className="hover:underline">Sign Up</div>
-          </DialogTrigger>
-          <AuthDialog />
-        </Dialog>
+
+        <div
+          onClick={() => navigate("/sign-up")}
+          className="hover:underline cursor-pointer"
+        >
+          Sign Up
+        </div>
       </div>
+      {/* <AuthDialog /> */}
 
       <div className="flex items-center gap-6">
         <div className="relative mt-4">

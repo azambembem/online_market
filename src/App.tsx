@@ -1,16 +1,28 @@
 import Navbar from "./components/navbar";
 import { Toaster } from "@/components/ui/sonner";
 import Footer from "./components/footer";
-import Home from "./pages/home";
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
+import { route } from "./utils/route";
+import useIsAuthenticated from "react-auth-kit/hooks/useIsAuthenticated";
 
 function App() {
+  const isAuthenticated = useIsAuthenticated();
   return (
     <div>
       <Navbar />
       <Toaster />
       <Routes>
-        <Route path="/" element={<Home />} />
+        {route.map(({ id, isPrivate = false, ...configs }) =>
+          isPrivate ? (
+            <Route
+              key={id}
+              {...configs}
+              element={isAuthenticated ? configs.element : <Navigate to="/" />}
+            />
+          ) : (
+            <Route key={id} {...configs} />
+          )
+        )}
       </Routes>
 
       <Footer />
