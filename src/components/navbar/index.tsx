@@ -2,7 +2,6 @@ import type { FC } from "react";
 import { Input } from "../ui/input";
 import { Heart, Search, ShoppingCart } from "lucide-react";
 import { toast } from "sonner";
-// import AuthDialog from "./auth-dialog";
 import { useNavigate } from "react-router-dom";
 
 const Navbar: FC = () => {
@@ -14,7 +13,9 @@ const Navbar: FC = () => {
       </div>
 
       <div className="flex gap-8 text-[16px] cursor-pointer">
-        <div className="hover:underline">Home</div>
+        <div className="hover:underline" onClick={() => navigate("/")}>
+          Home
+        </div>
         <div className="hover:underline">Contact</div>
         <div className="hover:underline">About</div>
 
@@ -25,7 +26,6 @@ const Navbar: FC = () => {
           Sign Up
         </div>
       </div>
-      {/* <AuthDialog /> */}
 
       <div className="flex items-center gap-6">
         <div className="relative mt-4">

@@ -1,5 +1,5 @@
 import Home from "@/pages/home";
-import Login from "@/pages/login";
+import SignIn from "@/pages/sign-in";
 import SignUp from "@/pages/sing-up";
 import type { IRoute } from "@/types";
 
@@ -17,9 +17,9 @@ export const route: IRoute[] = [
     id: 2
   },
   {
-    title: "Login",
-    path: "/login",
-    element: <Login />,
+    title: "SignIn",
+    path: "/sign-in",
+    element: <SignIn />,
     id: 2
   }
 ];
