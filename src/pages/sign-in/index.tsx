@@ -1,4 +1,4 @@
-import SingInComponent from "@/components/navbar/sign-in";
+import SingInComponent from "@/components/sign-in";
 
 const SingIn = () => {
   return (

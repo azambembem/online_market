@@ -100,14 +100,80 @@
 // export const { setSignIn, setSignUp, setAuthState } = auth.actions;
 // export default auth.reducer;
 
-import { createSlice } from "@reduxjs/toolkit";
+// import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+
+// type State = "loading" | "error" | null;
+
+// type User = {
+//   id: string;
+//   name: string;
+//   email: string;
+//   avatar?: string;
+// };
+
+// type InitialState = {
+//   sign_in: {
+//     state: State;
+//     email: string;
+//     password: string;
+//   };
+//   sign_up: {
+//     state: State;
+//     name: string;
+//     email: string;
+//     password: string;
+//   };
+//   // user: User | null; // Added user property
+//   state: "sign-in" | "sign-up";
+// };
+
+// const initialState: InitialState = {
+//   sign_in: { state: null, email: "", password: "" },
+//   sign_up: { state: null, name: "", email: "", password: "" },
+//   user: null, // Initialize user as null
+//   state: "sign-in",
+// };
+
+// const auth = createSlice({
+//   name: "auth",
+//   initialState,
+//   reducers: {
+//     setSignIn(state, { payload }) {
+//       state.sign_in = { ...state.sign_in, ...payload };
+//     },
+//     setSignUp(state, { payload }) {
+//       state.sign_up = { ...state.sign_up, ...payload };
+//     },
+//     setAuthState(state, { payload }) {
+//       state.state = payload;
+//     },
+//     setUser(state, { payload }: PayloadAction<User | null>) {
+//       // Update the user property
+//       state.user = payload;
+//     },
+    
+//   },
+// });
+
+// export const { setSignIn, setSignUp, setAuthState, setUser} = auth.actions;
+// export default auth.reducer;
+
+
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 type State = "loading" | "error" | null;
+
+type User = {
+  id: string;
+  name: string;
+  email: string;
+  avatar?: string;
+};
 
 type InitialState = {
   sign_in: {
     state: State;
-    number: string;
+    email: string;
     password: string;
   };
   sign_up: {
@@ -116,12 +182,14 @@ type InitialState = {
     email: string;
     password: string;
   };
+  user: User | null; // Added user property
   state: "sign-in" | "sign-up";
 };
 
 const initialState: InitialState = {
-  sign_in: { state: null, number: "", password: "" },
+  sign_in: { state: null, email: "", password: "" },
   sign_up: { state: null, name: "", email: "", password: "" },
+  user: null, // Initialize user as null
   state: "sign-in",
 };
 
@@ -138,8 +206,12 @@ const auth = createSlice({
     setAuthState(state, { payload }) {
       state.state = payload;
     },
+    setUser(state, { payload }: PayloadAction<User | null>) {
+      // Update the user property
+      state.user = payload;
+    },
   },
 });
 
-export const { setSignIn, setSignUp, setAuthState } = auth.actions;
+export const { setSignIn, setSignUp, setAuthState, setUser } = auth.actions;
 export default auth.reducer;
