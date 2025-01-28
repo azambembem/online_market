@@ -21,6 +21,7 @@ export const useAuthSignUpFeatures = (): AuthSignInFeatures => {
       console.error("Sign-Up Failed:", error);
       dispatch(setSignUp({ state: "error" }));
       alert("Failed to create account. Please try again."); // 실패 알림 추가
+      throw error;
     }
   };
 

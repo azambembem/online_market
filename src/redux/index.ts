@@ -24,8 +24,5 @@ const store = configureStore({
 
 export default store;
 
-// RootStore 정의 (Redux 상태 타입)
 export type RootStore = ReturnType<typeof store.getState>;
-
-// AppDispatch 정의 (dispatch 타입)
 export type AppDispatch = typeof store.dispatch;
