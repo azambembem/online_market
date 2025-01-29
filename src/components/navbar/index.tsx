@@ -45,7 +45,7 @@ const Navbar: FC = () => {
       </div>
 
       <div className="flex items-center gap-6">
-        <div className="relative mt-4">
+        <div className="relative mt-4 mr-10">
           <Input
             type="text"
             placeholder="What are you looking for?"
@@ -54,7 +54,7 @@ const Navbar: FC = () => {
           <Search className="absolute inset-y-1.5 right-3 flex items-center w-5 h-5" />
         </div>
 
-        <div className="flex gap-4 mt-4">
+        <div className="flex gap-4 mt-8 mr-10">
           <Heart
             onClick={() => toast("Like")}
             className="w-5 h-5 cursor-pointer"
