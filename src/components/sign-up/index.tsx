@@ -21,7 +21,7 @@ const SignUp: FC = () => {
     }
     try {
       await onSignUp({ name, email, password });
-      navigate("/sign-in"); // 로그인 성공시 sign-in ��이지로 이���
+      navigate("/sign-in"); // 로그인 성공시 sign-in
     } catch (error) {
       console.error("Sign-Up Failed:", error);
       alert("Failed to create account. Please try again."); // 실�� 알�� 추가
