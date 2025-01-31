@@ -7,21 +7,40 @@ import {
   CarouselNext,
   CarouselPrevious
 } from "@/components/ui/carousel";
+import { useFlayerFeatures } from "./feature";
+import { Skeleton } from "@/components/ui/skeleton";
+// import { v4 } from "uuid";
+
+// import { isError } from "@tanstack/react-query";
 
 const Flayer: FC = () => {
+  const {
+    genres: { isLoading, isError, data: genres }
+  } = useFlayerFeatures();
+
+  const loading = isLoading || isError;
   return (
     <div className="w-[90%] m-auto mt-8 ">
       <div className="flex gap-4 h-[450px]">
         <div className="w-[287px] rounded-sm flex flex-col gap-2 items-start bg-[#f5f5f5]">
-          <Button variant={"link"}>Woman’s Fashion</Button>
+          {/* <Button variant={"link"}>Woman’s Fashion</Button>
           <Button variant={"link"}>Men’s Fashion</Button>
-          <Button variant={"link"}>Electronics</Button>
+          <Button variant={"link"}>Elicsectron</Button>
           <Button variant={"link"}>Home & Lifestyle</Button>
           <Button variant={"link"}>Medicine</Button>
           <Button variant={"link"}>Sports & Outdoor</Button>
           <Button variant={"link"}>Baby’s & Toys</Button>
           <Button variant={"link"}>Groceries & Pets</Button>
-          <Button variant={"link"}>Health & Beauty</Button>
+          <Button variant={"link"}>Health & Beauty</Button> */}
+          {loading
+            ? Array.from({ length: 10 }).map((_, index) => (
+                <Skeleton className="w-full h-10 bg-[#c1c1c1]" key={index} />
+              ))
+            : genres?.map((genre) => (
+                <Button key={genre?._id} variant={"link"}>
+                  {genre?.name}
+                </Button>
+              ))}
         </div>
         <div className="w-full rounded-sm flex justify-center">
           <Carousel className="w-[92%] h-[488px]">
