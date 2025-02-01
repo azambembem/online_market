@@ -39,8 +39,7 @@ export const useFlayerFeatures = (): FlayerFeatures => {
         queryKey: ["category"],
         queryFn: async () => {
             const { data } = await axios.get(`${import.meta.env.VITE_APP_BASE_URL}/category`);
-            return data; // Assuming data is directly the array of genres
-        },
+            return data; 
     });
 
     return {
