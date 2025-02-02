@@ -40,6 +40,7 @@ export const useFlayerFeatures = (): FlayerFeatures => {
         queryFn: async () => {
             const { data } = await axios.get(`${import.meta.env.VITE_APP_BASE_URL}/category`);
             return data; 
+        },
     });
 
     return {

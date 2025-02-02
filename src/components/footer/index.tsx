@@ -83,13 +83,7 @@ const Footer = () => {
               <div className="flex space-x-[16px] mt-[8px]">
                 <img src="/images/qr_code.svg" alt="qr_code" />
               </div>
-              {/* <div className="flex flex-col space-x-[24px] mt-[16px]">
-                <img
-                  src="/images/google_play.svg"
-                  alt="google_play"
-                  className="mb-12"
-                />
-              </div> */}
+
               <div className="flex flex-row items-center space-x-[16px]">
                 <img src="/icons/facebook.svg" alt="facebook" />
                 <img src="/icons/twitter.svg" alt="twitter" />
