@@ -9,36 +9,26 @@ import {
 } from "@/components/ui/carousel";
 import { useFlayerFeatures } from "./feature";
 import { Skeleton } from "@/components/ui/skeleton";
-// import { v4 } from "uuid";
-
-// import { isError } from "@tanstack/react-query";
+import { v4 } from "uuid";
 
 const Flayer: FC = () => {
   const {
-    genres: { isLoading, isError, data: genres }
+    category: { isLoading, isError, data: category }
   } = useFlayerFeatures();
 
   const loading = isLoading || isError;
   return (
     <div className="w-[90%] m-auto mt-8 ">
       <div className="flex gap-4 h-[450px]">
-        <div className="w-[287px] rounded-sm flex flex-col gap-2 items-start bg-[#f5f5f5]">
-          {/* <Button variant={"link"}>Woman’s Fashion</Button>
-          <Button variant={"link"}>Men’s Fashion</Button>
-          <Button variant={"link"}>Elicsectron</Button>
-          <Button variant={"link"}>Home & Lifestyle</Button>
-          <Button variant={"link"}>Medicine</Button>
-          <Button variant={"link"}>Sports & Outdoor</Button>
-          <Button variant={"link"}>Baby’s & Toys</Button>
-          <Button variant={"link"}>Groceries & Pets</Button>
-          <Button variant={"link"}>Health & Beauty</Button> */}
+        <div className="w-[287px] rounded-sm p-4 flex flex-col gap-2 items-start bg-[#f5f5f5] h-[488px] overflow-auto">
           {loading
-            ? Array.from({ length: 10 }).map((_, index) => (
-                <Skeleton className="w-full h-10 bg-[#c1c1c1]" key={index} />
+            ? Array.from({ length: 10 }).map(() => (
+                <Skeleton className="w-full h-10 bg-[#c1c1c1]" key={v4()} />
               ))
-            : genres?.map((genre) => (
-                <Button key={genre?._id} variant={"link"}>
-                  {genre?.name}
+            : Array.isArray(category) &&
+              category?.map((categories) => (
+                <Button key={categories?._id} variant={"link"}>
+                  {categories?.name}
                 </Button>
               ))}
         </div>
@@ -61,8 +51,7 @@ const Flayer: FC = () => {
               </CarouselItem>
               <CarouselItem>
                 <img
-                  src="https://www.bhphotovideo.com/images/images2500x2500/lg_14z990_u_aaw5u1_gram_i5_8265u_8gb_256ssd_1459832.jpg
-"
+                  src="https://www.bhphotovideo.com/images/images2500x2500/lg_14z990_u_aaw5u1_gram_i5_8265u_8gb_256ssd_1459832.jpg"
                   alt="LG"
                   className="h-[48%] w-[100%]"
                 />
