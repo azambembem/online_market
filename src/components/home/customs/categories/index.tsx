@@ -14,27 +14,27 @@ const Categories = () => {
           className="h-[160px] rounded-[4px] grid gap-2"
         />
         <img
-          src="/images/phone.svg"
+          src="/images/computers.svg"
           alt="img"
           className="h-[160px] rounded-[4px] grid gap-2"
         />
         <img
-          src="/images/phone.svg"
+          src="/images/watch.svg"
           alt="img"
           className="h-[160px] rounded-[4px] grid gap-2"
         />
         <img
-          src="/images/phone.svg"
+          src="/images/camera.svg"
           alt="img"
           className="h-[160px] rounded-[4px] grid gap-2"
         />
         <img
-          src="/images/phone.svg"
+          src="/images/headphone.svg"
           alt="img"
           className="h-[160px] rounded-[4px] grid gap-2"
         />
         <img
-          src="/images/phone.svg"
+          src="/images/gaming.svg"
           alt="img"
           className="h-[160px] rounded-[4px] grid gap-2"
         />
