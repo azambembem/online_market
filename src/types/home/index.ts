@@ -20,6 +20,29 @@ export type TCategory = {
 	update_at: number;
 }
 
+export type TTodays = {
+	_id: string;
+	name: string;
+	category: {
+	  _id: string;
+	  name: string;
+	};
+	star: number;
+	price: number;
+	discount: number;
+	total_count: number;
+	total_sold: number;
+	main_image: string;
+	images: string[];
+	created_at: string;
+	updated_at?: string;
+	update_at?: string;
+	__v: number;
+	hashtags?: string[];
+  };
+  
+
+
 
 // export type TBooks = {
 // 	_id: string;

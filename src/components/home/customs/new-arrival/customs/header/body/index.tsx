@@ -1,4 +1,5 @@
 const Body = () => {
+  // const { most_popular_monthly, data };
   return (
     <div className="p-4">
       <div className="grid grid-cols-2 gap-4">
