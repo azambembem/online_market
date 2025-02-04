@@ -41,8 +41,28 @@ export type TTodays = {
 	hashtags?: string[];
   };
   
-
   export type TMonth = {
+	_id: string;
+	name: string;
+	category: {
+	  _id: string;
+	  name: string;
+	};
+	star: number;
+	price: number;
+	discount: number;
+	total_count: number;
+	total_sold: number;
+	main_image: string;
+	images: string[];
+	created_at: string;
+	updated_at?: string;
+	update_at?: string;
+	__v: number;
+	hashtags?: string[];
+  };
+
+  export type TExplore = {
 	_id: string;
 	name: string;
 	category: {
