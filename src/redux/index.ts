@@ -15,10 +15,12 @@
 // store.ts 파일
 import { configureStore } from "@reduxjs/toolkit";
 import auth from "./slice/auth"; // auth slice 불러오기
+import cart from "./slice/cart";
 
 const store = configureStore({
   reducer: {
     auth,
+    cart,
   },
 });
 

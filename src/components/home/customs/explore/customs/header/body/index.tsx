@@ -3,6 +3,7 @@ import { TExplore } from "@/types/home";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import Card from "./customs/card";
+import { Button } from "@/components/ui/button";
 
 const Body = () => {
   const [visibleCount, setVisibleCount] = useState(4); // 처음에는 4개만 보이게 설정
@@ -41,19 +42,19 @@ const Body = () => {
 
   return (
     <div>
-      <div className="grid grid-cols-4 gap-2 mt-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 mt-8">
         {get_product?.map((product: TExplore) => (
           <Card key={product._id} {...product} />
         ))}
       </div>
 
       <div className="flex justify-center mt-4">
-        <button
+        <Button
           onClick={handleViewAll}
-          className="w-[200px] bg-red-500 text-white py-2 rounded"
+          className="w-[200px] bg-red-500 text-white py-2 rounded cursor-pointer"
         >
           View All Products
-        </button>
+        </Button>
       </div>
     </div>
   );
